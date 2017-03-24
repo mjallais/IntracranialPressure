@@ -17,8 +17,13 @@ set( source_files
   src/Main.cpp
   )
 
+set( include_files
+  include/IterationCallback.hpp
+  )
+
 add_executable( IntracranialPressure
   ${source_files}
+  ${include_files}
   )
 
 target_link_libraries( IntracranialPressure
