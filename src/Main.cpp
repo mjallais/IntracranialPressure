@@ -133,7 +133,6 @@ int ImageRegistrationMethod( UCImageType::Pointer inputImage, unsigned int numbe
   bilateralFilter->SetRangeSigma( 20 );
 
   //viewer.AddImage<FixedImageType>( bilateralFilter->GetOutput(), true, "inputImage - bilateral filter" );
-
   typedef itk::BinaryThresholdImageFilter<
     FixedImageType, FixedImageType >  ThresholdFilterType;
   ThresholdFilterType::Pointer thresholdFilter = ThresholdFilterType::New();
@@ -269,6 +268,7 @@ int ImageRegistrationMethod( UCImageType::Pointer inputImage, unsigned int numbe
   registration->SetNumberOfLevels( numberOfLevels );
   registration->SetSmoothingSigmasPerLevel( smoothingSigmasPerLevel );
   registration->SetShrinkFactorsPerLevel( shrinkFactorsPerLevel );
+
 
   try
     {
@@ -423,8 +423,7 @@ int ImageRegistrationMethod( UCImageType::Pointer inputImage, unsigned int numbe
   viewer.SetNumberOfColumns( 3 );
   viewer.Visualize();
   return EXIT_SUCCESS;
-}
-
+  }
 
 int main()
   {
